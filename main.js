@@ -125,6 +125,18 @@ var vertices = [
 -0.4, -0.9,
 -0.2, -0.9,
 //"R" Finished
+
+//FAN 2
+0.5, -0.4,
+0.7, -0.1,
+0.9, -0.1,
+0.6, -0.5,
+0.6, -0.9,
+0.4, -0.9,
+0.4, -0.5,
+0.1, -0.1,
+0.3, -0.1,
+//"Y" Finished
 ];
 
 var buffer = gl.createBuffer();
@@ -186,7 +198,9 @@ gl.enableVertexAttribArray(aPosition);
   // Gambar huruf
   gl.drawArrays(gl.TRIANGLES, 50, 18); //50, 18 is fine? why 50? nvm, 22+28
   gl.drawArrays(gl.TRIANGLE_FAN, 68, 8);
-  gl.drawArrays(gl.TRIANGLE_STRIP, 76, 6)
+  gl.drawArrays(gl.TRIANGLE_STRIP, 76, 6);
+
+  gl.drawArrays(gl.TRIANGLE_FAN, 82, 9);
 }
 
 //TRIANGLE FAN --> berdasarkan titik pusat
