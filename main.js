@@ -139,9 +139,12 @@ gl.enableVertexAttribArray(aPosition);
   // Bersihkan buffer warna
   gl.clear(gl.COLOR_BUFFER_BIT);
 
-  // Gambar titik
+  // Gambar angka
   gl.drawArrays(gl.LINES, 0, 22);
   gl.drawArrays(gl.LINES, 22, 50);
+
+  // Gambar huruf
+  gl.drawArrays(gl.TRIANGLES, 22, )
 }
 
 //TRIANGLE FAN --> berdasarkan titik pusat
