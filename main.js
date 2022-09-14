@@ -83,6 +83,41 @@ var vertices = [
   
 //4 finished :D
 
+-0.9, -0.9,
+-0.9, -0.1,
+-0.7, -0.9,
+
+-0.7, -0.1,
+-0.7, -0.9,
+-0.9, -0.1,
+
+-0.9, -0.1,
+-0.7, -0.3,
+-0.4, -0.1,
+
+-0.7, -0.3,
+-0.4, -0.1,
+-0.5, -0.3,
+
+-0.4, -0.1,
+-0.5, -0.3,
+-0.2, -0.3,
+
+-0.5, -0.3,
+-0.2, -0.3,
+-0.5, -0.5,
+
+
+// FAN 1
+-0.5, -0.5,
+-0.2, -0.3,
+-0.2, -0.5,
+-0.3, -0.6,
+-0.4, -0.65,
+-0.6, -0.7,
+-0.7, -0.7,
+-0.7, -0.5,
+
 
 
 ];
@@ -141,10 +176,11 @@ gl.enableVertexAttribArray(aPosition);
 
   // Gambar angka
   gl.drawArrays(gl.LINES, 0, 22);
-  gl.drawArrays(gl.LINES, 22, 50);
+  gl.drawArrays(gl.LINES, 22, 28);
 
   // Gambar huruf
-  gl.drawArrays(gl.TRIANGLES, 22, )
+  gl.drawArrays(gl.TRIANGLES, 50, 18); //50, 18 is fine? why 50? nvm, 22+28
+  gl.drawArrays(gl.TRIANGLE_FAN, 68, 8);
 }
 
 //TRIANGLE FAN --> berdasarkan titik pusat
