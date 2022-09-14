@@ -1,4 +1,4 @@
-<br> Nama : Ferry Nur Alfian Eka Putra
-NRP : 5025201214
+Nama : Ferry Nur Alfian Eka Putra <br>
+NRP : 5025201214<br>
 String Combination : 14RA
 <br>
