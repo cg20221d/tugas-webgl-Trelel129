@@ -5,10 +5,41 @@ function main() {
   var gl = canvas.getContext("webgl");
   //array 1 dimensi
 var vertices = [
-  0.5, 0.5, // A: kanan atas
-  0.0, 0.0, // B: bawah tengah
-  -0.5, 0.5, // C: kiri atas
-  0.0, 1.0 // D: atas tengah
+  -0.6, 0.7,
+  -0.75, 0.5,
+
+  -0.75, 0.5,
+  -0.75, 0.7,
+
+  -0.75, 0.7,
+  -0.6, 0.9,
+
+  -0.6, 0.9,
+  -0.4, 0.9,
+
+  -0.4, 0.9,
+  -0.4, 0.2,
+
+  -0.4, 0.2,
+  -0.2, 0.2,
+
+  -0.2, 0.2,
+  -0.2, 0.1,
+
+  -0.2, 0.1,
+  -0.8, 0.1,
+
+  -0.8, 0.1,
+  -0.8, 0.2,
+  
+  -0.8, 0.2,
+  -0.6, 0.2,
+
+  -0.6, 0.2,
+  -0.6, 0.7,
+//1 finished :V
+
+
 ];
 
 var buffer = gl.createBuffer();
@@ -21,7 +52,7 @@ gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
     void main() {
       float x = aPosition.x;
       float y = aPosition.y;
-      gl_PointSize = 10.0;
+      gl_PointSize = 1.0;
       gl_Position = vec4(aPosition.xy, 0.0, 1.0);
     }
   `;
@@ -64,7 +95,7 @@ gl.enableVertexAttribArray(aPosition);
   gl.clear(gl.COLOR_BUFFER_BIT);
 
   // Gambar titik
-  gl.drawArrays(gl.TRIANGLE_FAN, 0, 4);
+  gl.drawArrays(gl.LINES, 0, 100);
 }
 
 //TRIANGLE FAN --> berdasarkan titik pusat
