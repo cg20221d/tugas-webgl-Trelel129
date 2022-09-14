@@ -80,7 +80,10 @@ var vertices = [
 
   0.3, 0.4,
   0.6, 0.7,
+  
 //4 finished :D
+
+
 
 ];
 
@@ -137,8 +140,8 @@ gl.enableVertexAttribArray(aPosition);
   gl.clear(gl.COLOR_BUFFER_BIT);
 
   // Gambar titik
-  gl.drawArrays(gl.LINES, 0, 44);
-  gl.drawArrays(gl.LINES, 44, 200);
+  gl.drawArrays(gl.LINES, 0, 22);
+  gl.drawArrays(gl.LINES, 22, 50);
 }
 
 //TRIANGLE FAN --> berdasarkan titik pusat
