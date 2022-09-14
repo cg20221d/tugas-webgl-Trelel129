@@ -39,6 +39,48 @@ var vertices = [
   -0.6, 0.7,
 //1 finished :V
 
+  0.8, 0.1,
+  0.8, 0.3,
+
+  0.8, 0.3,
+  0.9, 0.3,
+
+  0.9, 0.3,
+  0.9, 0.4,
+  
+  0.9, 0.4,
+  0.8, 0.4,
+
+  0.8, 0.4,
+  0.8, 0.9,
+
+  0.8, 0.9,
+  0.6, 0.9,
+
+  0.6, 0.9,
+  0.1, 0.4,
+
+  0.1, 0.4,
+  0.1, 0.3,
+
+  0.1, 0.3,
+  0.6, 0.3,
+
+  0.6, 0.3,
+  0.6, 0.1,
+
+  0.6, 0.1,
+  0.8, 0.1,
+
+  0.6, 0.4,
+  0.6, 0.7,
+
+  0.6, 0.4,
+  0.3, 0.4,
+
+  0.3, 0.4,
+  0.6, 0.7,
+//4 finished :D
 
 ];
 
@@ -95,7 +137,8 @@ gl.enableVertexAttribArray(aPosition);
   gl.clear(gl.COLOR_BUFFER_BIT);
 
   // Gambar titik
-  gl.drawArrays(gl.LINES, 0, 100);
+  gl.drawArrays(gl.LINES, 0, 44);
+  gl.drawArrays(gl.LINES, 44, 200);
 }
 
 //TRIANGLE FAN --> berdasarkan titik pusat
