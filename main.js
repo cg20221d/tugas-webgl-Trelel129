@@ -127,16 +127,56 @@ var vertices = [
 //"R" Finished
 
 //FAN 2
-0.5, -0.4,
-0.7, -0.1,
-0.9, -0.1,
+// 0.5, -0.4,
+// 0.7, -0.1,
+// 0.9, -0.1,
+// 0.6, -0.5,
+// 0.6, -0.9,
+// 0.4, -0.9,
+// 0.4, -0.5,
+// 0.1, -0.1,
+// 0.3, -0.1,
+//"Y" Finished But Wrong letter D:
+
+//STRIP 2
+0.1, -0.9,
+0.3, -0.9,
+0.4, -0.1,
+0.6, -0.1,
+0.7, -0.9,
+0.9, -0.9,
+0.5, -0.3,
+
+//STRIP 3
 0.6, -0.5,
-0.6, -0.9,
-0.4, -0.9,
 0.4, -0.5,
-0.1, -0.1,
-0.3, -0.1,
-//"Y" Finished
+0.65, -0.7,
+0.35, -0.7
+//"A" Finished >///<
+
+// //STRIP A1
+// 0.1, -0.9,
+// 0.3, -0.9,
+// 0.1, -0.1,
+// 0.3, -0.1,
+
+// //strip A2
+// 0.1, -0.1,
+// 0.3, -0.3,
+// 0.9, -0.1,
+// 0.7, -0.3,
+
+// // STRIP A3
+// 0.9, -0.1,
+// 0.7, -0.3,
+// 0.9, -0.9,
+// 0.7, -0.9,
+
+// //STRIP A4
+// 0.3, -0.5,
+// 0.3, -0.7,
+// 0.7, -0.5,
+// 0.7, -0.7,
 ];
 
 var buffer = gl.createBuffer();
@@ -200,7 +240,14 @@ gl.enableVertexAttribArray(aPosition);
   gl.drawArrays(gl.TRIANGLE_FAN, 68, 8);
   gl.drawArrays(gl.TRIANGLE_STRIP, 76, 6);
 
-  gl.drawArrays(gl.TRIANGLE_FAN, 82, 9);
+  // gl.drawArrays(gl.TRIANGLE_STRIP, 82, 7);
+  // gl.drawArrays(gl.TRIANGLE_STRIP, 89, 4);
+
+  //Gambar amogus (pengganti A)
+  gl.drawArrays(gl.TRIANGLE_STRIP, 82, 4);
+  gl.drawArrays(gl.TRIANGLE_STRIP, 86, 4);
+  gl.drawArrays(gl.TRIANGLE_STRIP, 90, 4);
+  gl.drawArrays(gl.TRIANGLE_STRIP, 94, 4);
 }
 
 //TRIANGLE FAN --> berdasarkan titik pusat
