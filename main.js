@@ -240,14 +240,14 @@ gl.enableVertexAttribArray(aPosition);
   gl.drawArrays(gl.TRIANGLE_FAN, 68, 8);
   gl.drawArrays(gl.TRIANGLE_STRIP, 76, 6);
 
-  // gl.drawArrays(gl.TRIANGLE_STRIP, 82, 7);
-  // gl.drawArrays(gl.TRIANGLE_STRIP, 89, 4);
+  gl.drawArrays(gl.TRIANGLE_STRIP, 82, 7);
+  gl.drawArrays(gl.TRIANGLE_STRIP, 89, 4);
 
-  //Gambar amogus (pengganti A)
-  gl.drawArrays(gl.TRIANGLE_STRIP, 82, 4);
-  gl.drawArrays(gl.TRIANGLE_STRIP, 86, 4);
-  gl.drawArrays(gl.TRIANGLE_STRIP, 90, 4);
-  gl.drawArrays(gl.TRIANGLE_STRIP, 94, 4);
+  // //Gambar amogus (pengganti A)
+  // gl.drawArrays(gl.TRIANGLE_STRIP, 82, 4);
+  // gl.drawArrays(gl.TRIANGLE_STRIP, 86, 4);
+  // gl.drawArrays(gl.TRIANGLE_STRIP, 90, 4);
+  // gl.drawArrays(gl.TRIANGLE_STRIP, 94, 4);
 }
 
 //TRIANGLE FAN --> berdasarkan titik pusat
