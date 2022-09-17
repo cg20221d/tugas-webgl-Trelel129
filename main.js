@@ -4,6 +4,7 @@ function main() {
   // Ambil konteks WebGL
   var gl = canvas.getContext("webgl");
   //array 1 dimensi
+  
 var vertices = [
   -0.6, 0.7,
   -0.75, 0.5,
@@ -185,13 +186,23 @@ gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
 
   //posisi
   var vertexShaderCode = `
-  attribute vec2 aPosition;
-    void main() {
-      float x = aPosition.x;
-      float y = aPosition.y;
-      gl_PointSize = 1.0;
-      gl_Position = vec4(aPosition.xy, 0.0, 1.0);
-    }
+  varying vec2 pos;
+      attribute vec2 aPosition;
+  
+      void main() {
+        pos = aPosition;
+        float x = aPosition.x;
+        float y = aPosition.y;
+        gl_PointSize = 10.0;
+        gl_Position = vec4(x, y, 0.0, 1.0);
+      }
+  // attribute vec2 aPosition;
+  //   void main() {
+  //     float x = aPosition.x;
+  //     float y = aPosition.y;
+  //     gl_PointSize = 1.0;
+  //     gl_Position = vec4(aPosition.xy, 0.0, 1.0);
+  //   }
   `;
 
   var vertexShader = gl.createShader(gl.VERTEX_SHADER);
@@ -201,12 +212,25 @@ gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
   //warna
   var fragmentShaderCode = `
     precision mediump float;
-    void main() {
-      float r = 0.0;
-      float g = 0.0;
-      float b = 1.0;
-      gl_FragColor = vec4(r, g, b, 1.0);
+    varying vec2 pos;
+
+    float map(float value, float min1, float max1, float min2, float max2) {
+      return min2 + (value - min1) * (max2 - min2) / (max1 - min1);
     }
+
+    void main() {
+      float r = map(pos.x + (pos.y * 0.2) + 0.8, 0.0, 1.5, 0.66, 0.21);
+      float g = map(pos.x + (pos.y * 0.2) + 0.8, 0.5, 1.5, 0.81, 0.29);
+      float b = map(pos.x + (pos.y * 0.2) + 0.8, 0.9, 1.5, 0.95, 0.30);   
+      gl_FragColor = vec4(r, g, b, 1);
+    }
+    // precision mediump float;
+    // void main() {
+    //   float r = 0.0;
+    //   float g = 0.0;
+    //   float b = 1.0;
+    //   gl_FragColor = vec4(r, g, b, 1.0);
+    // }
   `;
 
   var fragmentShader = gl.createShader(gl.FRAGMENT_SHADER);
@@ -248,6 +272,8 @@ gl.enableVertexAttribArray(aPosition);
   // gl.drawArrays(gl.TRIANGLE_STRIP, 86, 4);
   // gl.drawArrays(gl.TRIANGLE_STRIP, 90, 4);
   // gl.drawArrays(gl.TRIANGLE_STRIP, 94, 4);
+  
+  
 }
 
 //TRIANGLE FAN --> berdasarkan titik pusat
