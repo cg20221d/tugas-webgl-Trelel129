@@ -220,25 +220,25 @@ gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
   //warna
   var fragmentShaderCode = `
     precision mediump float;
-    // varying vec2 pos;
+    varying vec2 pos;
 
-    // float map(float value, float min1, float max1, float min2, float max2) {
-    //   return min2 + (value - min1) * (max2 - min2) / (max1 - min1);
-    // }
+    float map(float value, float min1, float max1, float min2, float max2) {
+      return min2 + (value - min1) * (max2 - min2) / (max1 - min1);
+    }
 
+    void main() {
+      float r = map(pos.x + (pos.y * 0.2) + 0.8, 0.0, 1.5, 0.66, 0.21);
+      float g = map(pos.x + (pos.y * 0.2) + 0.8, 0.5, 1.5, 0.81, 0.29);
+      float b = map(pos.x + (pos.y * 0.2) + 0.8, 0.9, 1.5, 0.95, 0.30);   
+      gl_FragColor = vec4(r, g, b, 1);
+    }
+    // precision mediump float;
     // void main() {
-    //   float r = map(pos.x + pos.y, 0.0, 1.0, 0.427, 0.48);
-    //   float g = map(pos.x + pos.y, 0.0, 1.0, 0.44, 0.22);
-    //   float b = map(pos.x + pos.y, 0.0, 1.0, 0.48, 0.42);   
+    //   float r = 0.0;
+    //   float g = 0.0;
+    //   float b = 1.0;
     //   gl_FragColor = vec4(r, g, b, 1.0);
     // }
-    precision mediump float;
-    void main() {
-      float r = 0.0;
-      float g = 0.0;
-      float b = 1.0;
-      gl_FragColor = vec4(r, g, b, 1.0);
-    }
   `;
 
   const color1 = [1.0, 0.55, 0];
@@ -277,7 +277,6 @@ gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
 
   gl.drawArrays(gl.TRIANGLE_STRIP, 82, 7);
   gl.drawArrays(gl.TRIANGLE_STRIP, 89, 4);
-  draw(gl, [vertexShaderCode, fRGB], color1, color2, "rgb");
 
   // //Gambar amogus (pengganti A)
   // gl.drawArrays(gl.TRIANGLE_STRIP, 82, 4);
