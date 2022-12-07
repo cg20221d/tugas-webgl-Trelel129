@@ -145,7 +145,7 @@ function main(){
 
     /** @type {HTMLCanvasElement} */
     
-    var canvas = document.getElementById("MyCanvas")
+    var canvas = document.getElementById("Canvas")
 
     // // fullscreen
     canvas.width = canvas.offsetWidth
