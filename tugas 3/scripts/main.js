@@ -139,20 +139,20 @@ function main() {
   // 0.3, -0.1,
   //"Y" Finished But Wrong letter D:
   
-  //STRIP 2
-  0.1, -0.9,
-  0.3, -0.9,
-  0.4, -0.1,
-  0.6, -0.1,
-  0.7, -0.9,
-  0.9, -0.9,
-  0.5, -0.3,
+//   //STRIP 2
+//   0.1, -0.9,
+//   0.3, -0.9,
+//   0.4, -0.1,
+//   0.6, -0.1,
+//   0.7, -0.9,
+//   0.9, -0.9,
+//   0.5, -0.3,
   
-  //STRIP 3
-  0.6, -0.5,
-  0.4, -0.5,
-  0.65, -0.7,
-  0.35, -0.7
+//   //STRIP 3
+//   0.6, -0.5,
+//   0.4, -0.5,
+//   0.65, -0.7,
+//   0.35, -0.7
   //"A" Finished >///<
   
   // //STRIP A1
@@ -236,16 +236,16 @@ function main() {
     gl.clear(gl.COLOR_BUFFER_BIT);
   
     // Gambar angka
-    gl.drawArrays(gl.LINES, 0, 22);
-    gl.drawArrays(gl.LINES, 22, 28);
+    gl.drawArrays(gl.LINES, 0, 28);
+    // gl.drawArrays(gl.LINES, 22, 28);
   
     // Gambar huruf
-    gl.drawArrays(gl.TRIANGLES, 50, 18); //50, 18 is fine? why 50? nvm, 22+28
-    gl.drawArrays(gl.TRIANGLE_FAN, 68, 8);
-    gl.drawArrays(gl.TRIANGLE_STRIP, 76, 6);
+    gl.drawArrays(gl.TRIANGLES, 28, 18); //50, 18 is fine? why 50? nvm, 22+28
+    gl.drawArrays(gl.TRIANGLE_FAN, 46, 8);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 54, 6);
   
-    gl.drawArrays(gl.TRIANGLE_STRIP, 82, 7);
-    gl.drawArrays(gl.TRIANGLE_STRIP, 89, 4);
+    // gl.drawArrays(gl.TRIANGLE_STRIP, 82, 7);
+    // gl.drawArrays(gl.TRIANGLE_STRIP, 89, 4);
   
     // //Gambar amogus (pengganti A)
     // gl.drawArrays(gl.TRIANGLE_STRIP, 82, 4);
